@@ -24,9 +24,14 @@ class MainActivity : AppCompatActivity() {
         // EpoxyRecyclerViewのバインド
         binding.epoxyRecyclerView.withModels {
 
+            itemTitleText {
+                id("hello_text_dataBinding")
+                text("Hello, World! (data-binding)")
+            }
+
             // Composeのコンポーネントを呼び出す
-            composableInterop("hello_text") {
-                HelloText(text = "Hello, World!")
+            composableInterop("hello_text_compose") {
+                HelloText(text = "Hello, World! (Compose)")
             }
         }
     }
